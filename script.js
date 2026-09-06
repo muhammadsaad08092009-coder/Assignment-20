@@ -1,11 +1,23 @@
+function handleLogin() {
+    let resultDisplay = document.getElementById("result-box");
+    
+
+    checkUsername();
+    checkPassword();
+
+
 function checkPassword() {
     let input = document.getElementById("password-Input");
     let value = input.value;
+    let result = document.getElementById("result");
 
     console.log("Password entered:", value);
+    result.innerHTML = ""
 
     if (value.length < 8) {
         console.log("Your password should be at least 8 characters long");
+        result.innerHTML = "you have to entered eight digit.";
+        result.style.backgroundColor = "lightgreen";        
     }
 
     if (!/[A-Z]/.test(value)) {
@@ -42,4 +54,5 @@ function checkUsername() {
     if (!/[a-zA-Z]/.test(value)) {
         console.log("Username should contain at least 1 alphabet");
     }
+}
 }
